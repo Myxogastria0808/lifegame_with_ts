@@ -7,13 +7,15 @@
         "prepare": "husky install",
         "build": "webpack --mode=production",
         "start": "webpack-cli server --mode=development",
-        "lint": "prettier --write \"./src/**/*.{js,ts}\" && eslint \"./src/**/*.{js,ts}\"",
-        "prettier": "prettier --write \"./src/**/*.{js,ts}\""
+        "lint": "prettier --check \"./**/*.{js, ts}\" && eslint --ext .js,.ts .",
+        "lint-fix": "prettier --write \"./**/*.{js, ts}\" && eslint --fix --ext .js,.ts .",
+        "format": "prettier --write \"./**/*.{js,ts}\""
     },
     "lint-staged": {
         "*.{js, ts}": [
-            "prettier --write \"./src/**/*.{js,ts}\"",
-            "eslint --fix \"src/**/*.{js,ts}\""
+            "yarn prettier --write \"./**/*.{js, ts}\"",
+            "yarn prettier --check \"./**/*.{js, ts}\"",
+            "yarn eslint --fix --ext .js,.ts ."
         ]
     },
     "devDependencies": {
