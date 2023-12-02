@@ -15,8 +15,7 @@
         "*.{js, ts}": [
             "yarn prettier --write \"./**/*.{js, ts}\"",
             "yarn prettier --check \"./**/*.{js, ts}\"",
-            "yarn eslint --fix --ext .js,.ts .",
-            "yarn build"
+            "yarn eslint --fix --ext .js,.ts ."
         ]
     },
     "devDependencies": {
